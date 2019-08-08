@@ -2,19 +2,24 @@
 
 A dockerized HTTP server for scraping user and repository information from GitHub.
 
-## Dependencies
+## Setup
 
 - Docker
-  - This project runs using docker containers. You will need to download and install Docker for your OS
   - [Install Docker](https://docs.docker.com/install/)
   - OR brew users: run `brew cask install docker`
 - sbt
   - [Install sbt](https://www.scala-sbt.org/release/docs/Setup.html)
   - OR brew users: run `brew install sbt`
+- Environment variables
+  - In order to avoid being rate limited by GitHub's API, the app authenticates using username/token or username/password
+  - The access token does not need any additional permissions
+  - [Create an access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line)
+  - run `export GITHUB_USERNAME={your_username}`
+  - run `export GITHUB_TOKEN={your_token}`
+  - OR (not recommended) run `export GITHUB_PASSWORD={your_password}`
   
 ## Getting started
 
-Once you have Docker installed, run the make recipe `start`
 ```bash
 $ make start
 ```

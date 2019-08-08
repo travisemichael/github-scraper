@@ -16,7 +16,8 @@ object GithubUserService {
   def apply(): GithubUserService = GithubUserServiceImpl()
 }
 
-class GithubUserServiceImpl extends GithubUserService {
+class GithubUserServiceImpl private[GithubUserServiceImpl]
+    extends GithubUserService {
   implicit val formats: DefaultFormats.type = DefaultFormats
 
   override def getAll(since: Int): Iterator[User] =
@@ -68,6 +69,6 @@ class GithubUserServiceImpl extends GithubUserService {
   }
 }
 
-object GithubUserServiceImpl {
+private[GithubUserService] object GithubUserServiceImpl {
   def apply(): GithubUserServiceImpl = new GithubUserServiceImpl()
 }

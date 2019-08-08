@@ -16,7 +16,8 @@ object GithubRepoService {
   def apply(): GithubRepoService = GithubRepoServiceImpl()
 }
 
-class GithubRepoServiceImpl extends GithubRepoService {
+class GithubRepoServiceImpl private[GithubRepoServiceImpl]
+    extends GithubRepoService {
   implicit val formats: DefaultFormats.type = DefaultFormats
 
   override def getAll(since: Int): Iterator[Repo] =
@@ -68,6 +69,6 @@ class GithubRepoServiceImpl extends GithubRepoService {
   }
 }
 
-object GithubRepoServiceImpl {
+private[GithubRepoService] object GithubRepoServiceImpl {
   def apply(): GithubRepoServiceImpl = new GithubRepoServiceImpl()
 }

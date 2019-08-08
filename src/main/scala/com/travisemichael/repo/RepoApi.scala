@@ -14,8 +14,8 @@ object RepoApi {
   def apply(): RepoApi = RepoApiImpl()
 }
 
-class RepoApiImpl(repoService: PersistenceService[Repo],
-                  ghService: GithubRepoService)
+class RepoApiImpl private[RepoApiImpl] (repoService: PersistenceService[Repo],
+                                        ghService: GithubRepoService)
     extends RepoApi {
   override def getAll: Iterator[Repo] = repoService.findAll()
 
@@ -34,6 +34,6 @@ class RepoApiImpl(repoService: PersistenceService[Repo],
   }
 }
 
-object RepoApiImpl {
+private[RepoApi] object RepoApiImpl {
   def apply(): RepoApiImpl = new RepoApiImpl(RepoService(), GithubRepoService())
 }

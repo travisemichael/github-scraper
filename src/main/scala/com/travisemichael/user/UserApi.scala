@@ -14,8 +14,8 @@ object UserApi {
   def apply(): UserApi = UserApiImpl()
 }
 
-class UserApiImpl(userService: PersistenceService[User],
-                  ghService: GithubUserService)
+class UserApiImpl private[UserApiImpl] (userService: PersistenceService[User],
+                                        ghService: GithubUserService)
     extends UserApi {
   override def getAll: Iterator[User] = userService.findAll()
 
@@ -33,6 +33,6 @@ class UserApiImpl(userService: PersistenceService[User],
   }
 }
 
-object UserApiImpl {
+private[UserApi] object UserApiImpl {
   def apply(): UserApiImpl = new UserApiImpl(UserService(), GithubUserService())
 }
