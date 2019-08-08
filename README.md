@@ -57,7 +57,7 @@ The server has a REST API that allows the querying of scraped data. It will also
 
 ### Users API
 
-#### __Get Users__: `GET /users?since={int}&count={int}`
+#### __Get Users__: `GET /users`
 
 Get all persisted user information
 
