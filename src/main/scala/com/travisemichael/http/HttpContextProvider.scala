@@ -11,7 +11,10 @@ import org.apache.http.impl.client.{BasicAuthCache, BasicCredentialsProvider}
   */
 object HttpContextProvider {
   private val provider = new BasicCredentialsProvider
-  private val credentials = new UsernamePasswordCredentials("foo", "bar")
+  private val credentials = new UsernamePasswordCredentials(
+    sys.env("GITHUB_USERNAME"),
+    sys.env.getOrElse("GITHUB_TOKEN", sys.env("GITHUB_PASSWORD"))
+  )
   provider.setCredentials(AuthScope.ANY, credentials)
 
   private val targetHost = new HttpHost("api.github.com", -1, "https")

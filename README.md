@@ -32,7 +32,7 @@ and you're up and running on http://localhost:8181!
 ### CRON
 The server is designed to run Scraping jobs on a cron schedule. The schedule can be modified in [scrape.cron](scrape.cron). A server restart is required to pick up the changes.
 
-###Job configuration
+### Job configuration
 The scraping jobs are configured via 2 json files: [users.json](users.json) and [repos.json](repos.json).
 
 Example users.json configuration
