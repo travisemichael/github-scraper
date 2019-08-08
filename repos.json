@@ -1,0 +1,18 @@
+{
+  "start": 0,
+  "count": 100,
+  "additional_repos": [
+    {
+      "owner": "travisemichael",
+      "name": "github-scraper"
+    },
+    {
+      "owner": "tesorio",
+      "name": "django-saml2-auth"
+    },
+    {
+      "owner": "google",
+      "name": "charts"
+    }
+  ]
+}
