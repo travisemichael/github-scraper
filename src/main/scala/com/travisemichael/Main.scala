@@ -20,8 +20,8 @@ object Main extends App {
   implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 
   logger.info("Creating database tables...")
-  UserService().createTableIfNotExist()
-  RepoService().createTableIfNotExist()
+  UserService().createTableIfNotExists()
+  RepoService().createTableIfNotExists()
 
   private val routes = BaseRoutes.routes ~ UserRoutes().routes ~ RepoRoutes().routes
   private val port = sys.env.getOrElse("GITHUB_SCRAPER_PORT", "8181").toInt
