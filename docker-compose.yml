@@ -11,6 +11,7 @@ services:
       - '8181:8181'
     depends_on:
       - mysql
+    command: ["./wait-for-it.sh", "mysql:3306"]
   mysql:
     image: mysql:5.7
     restart: always
