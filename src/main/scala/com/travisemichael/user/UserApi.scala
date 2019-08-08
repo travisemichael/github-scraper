@@ -33,6 +33,6 @@ class UserApiImpl private[UserApiImpl] (userService: PersistenceService[User],
   }
 }
 
-private[UserApi] object UserApiImpl {
+object UserApiImpl {
   def apply(): UserApiImpl = new UserApiImpl(UserService(), GithubUserService())
 }

@@ -12,8 +12,7 @@ A dockerized HTTP server for scraping user and repository information from GitHu
   - OR brew users: run `brew install sbt`
 - Environment variables
   - In order to avoid being rate limited by GitHub's API, the app authenticates using username/token or username/password
-  - The access token does not need any additional permissions
-  - [Create an access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line)
+  - [Create an access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line). The access token does not need any additional permissions.
   - run `export GITHUB_USERNAME={your_username}`
   - run `export GITHUB_TOKEN={your_token}`
   - OR (not recommended) run `export GITHUB_PASSWORD={your_password}`

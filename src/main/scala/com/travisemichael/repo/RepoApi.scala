@@ -34,6 +34,6 @@ class RepoApiImpl private[RepoApiImpl] (repoService: PersistenceService[Repo],
   }
 }
 
-private[RepoApi] object RepoApiImpl {
+object RepoApiImpl {
   def apply(): RepoApiImpl = new RepoApiImpl(RepoService(), GithubRepoService())
 }

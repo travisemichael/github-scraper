@@ -69,6 +69,6 @@ class GithubRepoServiceImpl private[GithubRepoServiceImpl]
   }
 }
 
-private[GithubRepoService] object GithubRepoServiceImpl {
+object GithubRepoServiceImpl {
   def apply(): GithubRepoServiceImpl = new GithubRepoServiceImpl()
 }
