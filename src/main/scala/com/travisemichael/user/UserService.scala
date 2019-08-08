@@ -25,7 +25,6 @@ class UserService(dbConnectionProvider: DatabaseConnectionProvider)
         |  blog varchar(255),
         |  location varchar(255),
         |  email varchar(255),
-        |  hireable boolean,
         |  public_repos int,
         |  public_gists int,
         |  followers int,
@@ -37,7 +36,7 @@ class UserService(dbConnectionProvider: DatabaseConnectionProvider)
   }
 
   private val upsertUsers =
-    "REPLACE INTO users VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    "REPLACE INTO users VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
   @throws[SQLException]
   override def upsert(users: Iterator[User]): Unit = {
