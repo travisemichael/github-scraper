@@ -6,9 +6,6 @@ import org.apache.http.client.protocol.HttpClientContext
 import org.apache.http.impl.auth.BasicScheme
 import org.apache.http.impl.client.{BasicAuthCache, BasicCredentialsProvider}
 
-/**
-  * Don't look at me!!!
-  */
 object HttpContextProvider {
   private val provider = new BasicCredentialsProvider
   private val credentials = new UsernamePasswordCredentials(
